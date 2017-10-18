@@ -12,14 +12,18 @@ public class SplashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 //Lanzaremos despues de 3000ms(3s), el MainActivity
                 Intent intent=new Intent(SplashScreenActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish(); //Para que si vuelvo atras no vuelva a aparecer la splashscreen, sino que directamente cierre la aplicacion
 
             }
         }, 3000);
+
+
     }
 }
